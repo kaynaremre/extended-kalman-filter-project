@@ -36,7 +36,7 @@ FusionEKF::FusionEKF() {
    * TODO: Finish initializing the FusionEKF.
    */
 
-  //ekf_.x_ = VectorXd(4);
+  ekf_.x_ = VectorXd(4);
 
   H_laser_ << 1, 0, 0, 0,
               0, 1, 0 ,0;
@@ -84,7 +84,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     // first measurement
     cout << "EKF: " << endl;
     ekf_.x_ = VectorXd(4);
-    ekf_.x_ << 1, 1, 1, 1;
+    //ekf_.x_ << 1, 1, 1, 1;
 
     if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
       // TODO: Convert radar from polar to cartesian coordinates 
